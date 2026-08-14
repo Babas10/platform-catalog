@@ -23,6 +23,7 @@ metadata:
     # ArgoCD plugin — shows GitOps sync status and health
     argocd/app-name: resource-burner
     # Todo plugin — scans rhdh-plugins repo for TODO/FIXME comments
+    rbac.backstage.io/team: alpha
     backstage.io/source-location: url:https://github.com/Babas10/rhdh-plugins
   links:
     - url: https://openshift-gitops-server-openshift-gitops.apps.ocp.v5mwq.sandbox3418.opentlc.com/applications/resource-burner

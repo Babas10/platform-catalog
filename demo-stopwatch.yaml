@@ -9,6 +9,7 @@ metadata:
     - demo
     - team-beta
   annotations:
+    rbac.backstage.io/team: beta
     argocd/app-selector: 'app=demo-stopwatch'
     backstage.io/source-location: url:https://github.com/Babas10/demo-stopwatch
 spec:

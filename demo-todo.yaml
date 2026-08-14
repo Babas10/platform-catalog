@@ -9,6 +9,7 @@ metadata:
     - demo
     - team-beta
   annotations:
+    rbac.backstage.io/team: beta
     argocd/app-selector: 'app=demo-todo'
     backstage.io/kubernetes-id: demo-todo
     backstage.io/kubernetes-namespace: agent-apps
