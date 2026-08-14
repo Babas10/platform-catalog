@@ -1,0 +1,12 @@
+---
+apiVersion: backstage.io/v1alpha1
+kind: System
+metadata:
+  name: platform-demo
+  title: Platform Demo
+  description: Demo workloads used to showcase RHDH capabilities — metering, Kubernetes visibility, GitOps, and dynamic plugins.
+  tags:
+    - demo
+    - platform
+spec:
+  owner: user:default/admin

@@ -3,12 +3,35 @@ apiVersion: backstage.io/v1alpha1
 kind: Component
 metadata:
   name: resource-burner
-  description: Cyclic CPU/memory load generator for metering plugin testing (2h high load, 30min idle, repeats indefinitely).
+  title: Resource Burner
+  description: |
+    Cyclic CPU/memory load generator used for the RHDH Metering plugin demo.
+    Runs 2 hours of sustained CPU + memory load followed by 30 minutes idle,
+    repeating indefinitely. Used to generate realistic cost data visible in
+    the Metering tab.
+  tags:
+    - demo
+    - metering
+    - kubernetes
+    - load-generator
   annotations:
+    # Kubernetes plugin — shows pods, deployment, replicasets in agent-apps
     backstage.io/kubernetes-namespace: agent-apps
     backstage.io/kubernetes-id: resource-burner
+    backstage.io/kubernetes-label-selector: app=resource-burner
+    # ArgoCD plugin — shows GitOps sync status and health
+    argocd/app-name: resource-burner
+    # Todo plugin — scans rhdh-plugins repo for TODO/FIXME comments
     backstage.io/source-location: url:https://github.com/Babas10/rhdh-plugins
+  links:
+    - url: https://openshift-gitops-server-openshift-gitops.apps.ocp.v5mwq.sandbox3418.opentlc.com/applications/resource-burner
+      title: ArgoCD Application
+      icon: dashboard
+    - url: https://github.com/Babas10/rhdh-plugins
+      title: Plugin Source
+      icon: github
 spec:
   type: service
-  lifecycle: experimental
+  lifecycle: production
   owner: user:default/admin
+  system: platform-demo
