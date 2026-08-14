@@ -5,6 +5,9 @@ metadata:
   name: demo-todo
   title: Demo Todo
   description: A simple todo demo application deployed via ArgoCD.
+  tags:
+    - demo
+    - team-beta
   annotations:
     argocd/app-selector: 'app=demo-todo'
     backstage.io/kubernetes-id: demo-todo
